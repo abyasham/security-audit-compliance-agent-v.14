@@ -9,7 +9,6 @@
 ## Screenshots
 
 ![Screenshot 1](https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca13_1.png)
-![Screenshot 2](https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca13-2.png)
 
 ![Version](https://img.shields.io/badge/version-v13-blue)
 ![Status](https://img.shields.io/badge/status-active%20development-success)
