@@ -16,6 +16,8 @@ pcap/
 *.cap
 *.log
 logs/
+# !media/saca.jpg
+# !media/saca13.mp4
 
 # Environment files
 .env
