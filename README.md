@@ -1,6 +1,6 @@
 # SACA v13
 
-![SACA Logo](media/saca.jpg)
+![SACA Logo](https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca.jpg)
 
 [Demo Video](https://github.com/abyasham/security-audit-compliance-agent-v.13/releases/download/saca13/saca13.mp4)
 
