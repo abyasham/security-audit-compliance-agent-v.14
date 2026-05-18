@@ -1,6 +1,8 @@
 # SACA v13
 
-![SACA Logo](saca.jpg)
+![SACA Logo](media/saca.jpg)
+
+[Demo Video](https://github.com/abyasham/security-audit-compliance-agent-v.13/releases/download/saca13/saca13.mp4)
 
 ![Version](https://img.shields.io/badge/version-v13-blue)
 ![Status](https://img.shields.io/badge/status-active%20development-success)
@@ -217,17 +219,6 @@ Current validation emphasis in this repository includes improvements proven on:
 - GT-13 class behavior: session hijacking/token reuse visibility.
 
 This GT + RAGAS-faithfulness workflow is used as a continuous mechanism to measure whether SACA remains evidence-grounded as capabilities evolve.
-
-For caveats and release detail:
-
-- `KNOWN_LIMITATIONS.md`
-- `RELEASE_NOTES_v13.md`
-
-## Documentation
-
-- `SACA13-PIPELINE-ANALYSIS.md`
-- `SACA13-IMPLEMENTATION-SUMMARY.md`
-- `plans/SACAv13-ARCHITECTURE.md`
 
 ## Status
 
