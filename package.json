@@ -1,0 +1,19 @@
+{
+  "name": "saca-monorepo",
+  "version": "0.1.0",
+  "description": "SACA v0.2 Multi-Agent Architecture",
+  "scripts": {
+    "prestart:all": "node scripts/kill-ports.js",
+    "start:all": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\" --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,green\" --kill-others-on-fail",
+    "build:all": "cd backend && npm run build && cd ../frontend && npm run build",
+    "security:scan-staged": "node scripts/secret-scan-staged.js",
+    "security:install-hooks": "node scripts/setup-git-hooks.js",
+    "start": ".\\scripts\\start.bat",
+    "stop": ".\\scripts\\stop.bat",
+    "reset": ".\\scripts\\reset.bat",
+    "restart": "npm run stop && npm run start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

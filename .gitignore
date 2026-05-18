@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Build output
+backend/dist/
+frontend/dist/
+
+# Runtime and temp data
+backend/data/
+backend/uploads/
+pcap/
+*.pcap
+*.pcapng
+*.cap
+*.log
+logs/
+
+# Environment files
+.env
+.env.*
+.env.local
+.env.docker
+*.env
+*.env.local
+backend/.env
+backend/.env.local
+frontend/.env
+frontend/.env.local
+
+# Secrets and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa
+id_ed25519
+secrets/
+credentials/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/*.log
+*.mp4
+
+# Excluded project folders (not part of main SACA release)
+nettraceagentix/
+docs/
+plans/

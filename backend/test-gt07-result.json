@@ -1,0 +1,14 @@
+{
+  "summary": {
+    "totalPackets": 0,
+    "packetCount": 0,
+    "durationSeconds": 0,
+    "protocolBreakdown": {},
+    "tcpStreamCount": 0,
+    "udpStreamCount": 0,
+    "startTime": "",
+    "endTime": ""
+  },
+  "dnsAnomalies": [],
+  "allAnomalyTypes": []
+}
