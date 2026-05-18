@@ -4,10 +4,13 @@
 
 ## Demo Video
 
-<video width="100%" controls>
-  <source src="https://github.com/abyasham/security-audit-compliance-agent-v.13/releases/download/saca13/saca13.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Demo Video](https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca.jpg)](https://github.com/abyasham/security-audit-compliance-agent-v.13/releases/download/saca13/saca13.mp4)
+
+## Screenshots
+
+![Screenshot 1](https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca13_1.png)
+![Screenshot 2](https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca13-2.png)
+![Screenshot 3](https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca13_3.png)
 
 ![Version](https://img.shields.io/badge/version-v13-blue)
 ![Status](https://img.shields.io/badge/status-active%20development-success)
