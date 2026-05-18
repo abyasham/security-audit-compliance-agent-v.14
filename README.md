@@ -2,7 +2,12 @@
 
 ![SACA Logo](https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca.jpg)
 
-[Demo Video](https://github.com/abyasham/security-audit-compliance-agent-v.13/releases/download/saca13/saca13.mp4)
+## Demo Video
+
+<video width="100%" controls>
+  <source src="https://github.com/abyasham/security-audit-compliance-agent-v.13/releases/download/saca13/saca13.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ![Version](https://img.shields.io/badge/version-v13-blue)
 ![Status](https://img.shields.io/badge/status-active%20development-success)
