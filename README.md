@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca.jpg" alt="SACA Logo" width="200">
 </p>
 
-## Demo Video
+<h2 align="center">Demo Video</h2>
 
 <p align="center">
   <a href="https://github.com/abyasham/security-audit-compliance-agent-v.13/releases/download/saca13/saca13.mp4">
@@ -10,10 +10,12 @@
   </a>
 </p>
 
-![Version](https://img.shields.io/badge/version-v13-blue)
-![Status](https://img.shields.io/badge/status-active%20development-success)
-![Node](https://img.shields.io/badge/node-%3E%3D20-339933)
-![Docker](https://img.shields.io/badge/docker-compose-2496ED)
+<p align="center">
+  <img src="https://img.shields.io/badge/version-v13-blue" alt="Version">
+  <img src="https://img.shields.io/badge/status-active%20development-success" alt="Status">
+  <img src="https://img.shields.io/badge/node-%3E%3D20-339933" alt="Node">
+  <img src="https://img.shields.io/badge/docker-compose-2496ED" alt="Docker">
+</p>
 
 SACA (Security Audit Compliance Agent) is a proposed next-generation solution for network security auditing.
 It combines packet-level evidence, policy-aware reasoning, and multi-agent analysis to produce defensible compliance findings from pcap data.
