@@ -1,5 +1,11 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca.jpg" alt="SACA Logo" width="200">
+  <img src="media/saca.jpg" alt="SACA Logo" width="300">
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/E_brJdQ0GjM">
+    <img src="media/saca14_ss.png" alt="SACA v14 Demo" width="600">
+  </a>
 </p>
 
 <p align="center">
@@ -13,8 +19,6 @@
 **SACA** (Security Audit Compliance Agent) is a research prototype for automated, explainable IoT network compliance auditing. It combines a **ground-truth-calibrated attack detector layer**, an **LLM-as-Judge compliance reasoning engine**, and a **RAGAS-based hallucination detection evaluator** to produce defensible security findings from network packet captures (pcap) against standards such as ETSI EN 303 645.
 
 **v14** introduces a hybrid TypeScript + Python architecture with unified multi-provider LLM support.
-
-> ⚠️ **Status:** v14 is currently under active development. APIs and interfaces may change.
 
 ## Research Contributions
 
@@ -87,6 +91,9 @@ Validated scores on real CICIoT 2023 captures: GT-08 (0.607 faithfulness), GT-02
 ## Docker Quick Start (Recommended)
 
 SACA v14 is designed to run entirely via Docker Desktop. This avoids local Python/Node setup and keeps all services consistent.
+
+### Demo
+[![SACA v14 Demo](media/saca14_ss.png)](https://youtu.be/E_brJdQ0GjM)
 
 ### Prerequisites
 
