@@ -1,0 +1,53 @@
+{
+  "session_id": "GT-08",
+  "timestamp": "2026-05-22T10:56:01.026454+00:00",
+  "avg_faithfulness": 0.493,
+  "avg_answer_relevancy": 0.096,
+  "provider_used": "openai",
+  "heuristic_fallback": false,
+  "error": null,
+  "per_finding_scores": [
+    {
+      "finding_id": "F-R001-a86308",
+      "rule_name": "Machine-to-Machine Authentication Method",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.209
+    },
+    {
+      "finding_id": "F-R002-b51684",
+      "rule_name": "Brute-Force Attack Resistance",
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.0
+    },
+    {
+      "finding_id": "F-R003-cd92f1",
+      "rule_name": "Secure Update Cryptography",
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.0
+    },
+    {
+      "finding_id": "F-R004-ed8244",
+      "rule_name": "Software Update Authenticity Verification",
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.0
+    },
+    {
+      "finding_id": "F-R005-6d3d3d",
+      "rule_name": "Isolability of Non-Updateable Devices",
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.0
+    },
+    {
+      "finding_id": "F-ANOM-9e24f5",
+      "rule_name": "Anomaly: syn_scan",
+      "faithfulness": 0.7,
+      "answer_relevancy": 0.158
+    },
+    {
+      "finding_id": "F-ANOM-dec021",
+      "rule_name": "Anomaly: brute_force",
+      "faithfulness": 0.7,
+      "answer_relevancy": 0.305
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "session_id": "GT-08",
+  "timestamp": "2026-05-22T15:36:11.824336+00:00",
+  "avg_faithfulness": 0.508,
+  "avg_answer_relevancy": 0.591,
+  "provider_used": "openai",
+  "heuristic_fallback": false,
+  "error": null,
+  "per_finding_scores": [
+    {
+      "finding_id": "F-R001-b6852d",
+      "rule_name": "Machine-to-Machine Authentication Method",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.674
+    },
+    {
+      "finding_id": "F-R002-a520c3",
+      "rule_name": "Secure Update Cryptography",
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.636
+    },
+    {
+      "finding_id": "F-R003-b1eea6",
+      "rule_name": "Network Update Authenticity Verification",
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.649
+    },
+    {
+      "finding_id": "F-R004-62d845",
+      "rule_name": "Isolation of Non-Updateable Devices",
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.716
+    },
+    {
+      "finding_id": "F-ANOM-e15868",
+      "rule_name": "Anomaly: syn_scan",
+      "faithfulness": 0.7,
+      "answer_relevancy": 0.474
+    },
+    {
+      "finding_id": "F-ANOM-6bef6d",
+      "rule_name": "Anomaly: brute_force",
+      "faithfulness": 0.7,
+      "answer_relevancy": 0.394
+    }
+  ]
+}

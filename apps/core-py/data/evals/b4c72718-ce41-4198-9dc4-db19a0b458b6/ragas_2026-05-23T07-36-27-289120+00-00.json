@@ -1,0 +1,19 @@
+{
+  "session_id": "b4c72718-ce41-4198-9dc4-db19a0b458b6",
+  "timestamp": "2026-05-23T07:36:27.289120+00:00",
+  "avg_faithfulness": 0.5,
+  "avg_answer_relevancy": 0.667,
+  "provider_used": "openai",
+  "heuristic_fallback": false,
+  "error": null,
+  "per_finding_scores": [
+    {
+      "finding_id": "F-H004-48e590",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.667,
+      "faithfulness_reason": "LLM Faithfulness 50%: The judge's reasoning is partially grounded in the evidence \u2014 most claims are supported but some may be inferred. Evidence used: \"Plaintext HTTP: 192.168.137.1 \u2192 192.168.137.190:80...\" Judge reasoning: \"Matched rule 'ETSI \nETSI EN 303 645 V3' with confidence 0.95. Flow: 192.168.137.1 \u2192 192.168.137.190:80 (HTTP) stream 5....\"",
+      "relevancy_reason": "Reasoning provided (181 chars); Rule description available; Score 67%: Response partially addresses the rule 'Is this network traffic finding a violation of ETSI \nETSI EN 303 645 V3?' \u2014 some relevant points may be missing."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "session_id": "64bb5f02-e81a-4508-a911-d382cc9a101c",
+  "timestamp": "2026-05-22T21:56:07.595750+00:00",
+  "avg_faithfulness": 0.9,
+  "avg_answer_relevancy": 0.419,
+  "provider_used": "openai",
+  "heuristic_fallback": false,
+  "error": null,
+  "per_finding_scores": [
+    {
+      "finding_id": "F-H004-9a7ed9",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.236,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (314 chars); Rule description available; Score 24%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H006-d8f7b5",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.813,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (302 chars); Rule description available; Score 81%: Response directly addresses the policy rule 'ETSI \nETSI EN 303 645 V3'."
+    },
+    {
+      "finding_id": "F-H009-9daa17",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.209,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (149 chars); Rule description available; Score 21%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    }
+  ]
+}

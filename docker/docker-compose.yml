@@ -1,0 +1,46 @@
+services:
+  # ── Python Analysis Core ───────────────────────────────────────────
+  core-py:
+    build:
+      context: ../apps/core-py
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ../.env
+    volumes:
+      - ../apps/core-py:/app
+      - uploads_data:/app/uploads
+    restart: unless-stopped
+
+  # ── TypeScript Express API Gateway ──────────────────────────────────
+  api-ts:
+    build:
+      context: ../apps/api-ts
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    env_file:
+      - ../.env
+    environment:
+      - PYTHON_CORE_URL=http://core-py:8000
+    volumes:
+      - ../apps/api-ts/src:/app/src
+      - uploads_data:/app/uploads
+    depends_on:
+      - core-py
+    restart: unless-stopped
+
+  # ── React Vite Frontend ─────────────────────────────────────────────
+  web:
+    build:
+      context: ../apps/web
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api-ts
+    restart: unless-stopped
+
+volumes:
+  uploads_data:

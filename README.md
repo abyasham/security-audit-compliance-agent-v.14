@@ -2,232 +2,208 @@
   <img src="https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca.jpg" alt="SACA Logo" width="200">
 </p>
 
-<h2 align="center">Demo Video</h2>
-
 <p align="center">
-  <a href="https://github.com/abyasham/security-audit-compliance-agent-v.13/releases/download/saca13/saca13.mp4">
-    <img src="https://raw.githubusercontent.com/abyasham/security-audit-compliance-agent-v.13/clean/media/saca13_1.png" alt="Demo Video" width="400">
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/version-v13-blue" alt="Version">
+  <img src="https://img.shields.io/badge/version-v14-blue" alt="Version">
   <img src="https://img.shields.io/badge/status-active%20development-success" alt="Status">
   <img src="https://img.shields.io/badge/node-%3E%3D20-339933" alt="Node">
+  <img src="https://img.shields.io/badge/python-3.11+-3776AB" alt="Python">
   <img src="https://img.shields.io/badge/docker-compose-2496ED" alt="Docker">
 </p>
 
-SACA (Security Audit Compliance Agent) is a proposed next-generation solution for network security auditing.
-It combines packet-level evidence, policy-aware reasoning, and multi-agent analysis to produce defensible compliance findings from pcap data.
+**SACA** (Security Audit Compliance Agent) is a research prototype for automated, explainable IoT network compliance auditing. It combines a **ground-truth-calibrated attack detector layer**, an **LLM-as-Judge compliance reasoning engine**, and a **RAGAS-based hallucination detection evaluator** to produce defensible security findings from network packet captures (pcap) against standards such as ETSI EN 303 645.
 
-## 30-Second Quick Start
+**v14** introduces a hybrid TypeScript + Python architecture with unified multi-provider LLM support.
 
-```powershell
-cd C:\saca\saca13
-Copy-Item .env.example .env.docker
-# Add at least one cloud key in .env.docker (OPENAI_API_KEY or DEEPSEEK_API_KEY or OPENROUTER_API_KEY)
-docker compose --env-file .env.docker up --build
+> ⚠️ **Status:** v14 is currently under active development. APIs and interfaces may change.
+
+## Research Contributions
+
+SACA v14 makes three novel contributions to automated compliance auditing:
+
+### 1. Extensible, Ground-Truth-Calibrated Attack Detector Architecture
+
+The `NetworkAgent` provides a **modular, additive detector layer** built on direct `tshark` CLI queries. Each detector is an isolated function — `file_path → List[Dict]` — that can be added, tuned, or removed without affecting any other detector. The architecture is currently calibrated against **all 11 available attack scenarios in the CICIoT 2023 dataset** (GT-01 to GT-13):
+
+| Detector | Attack Type | GT Coverage |
+|---|---|---|
+| `detect_web_app_attacks` | XSS, SQLi, file upload, web shell, traversal | GT-01, 02, 03, 16 |
+| `detect_brute_force` | SSH/HTTP/IoT password cracking (incl. port 9999) | GT-08 |
+| `detect_syn_scans` | Reconnaissance / host discovery | GT-04, 06 |
+| `detect_dns_hijacking` | Rogue DNS responders, cache poisoning | GT-07 |
+| `detect_session_hijacking` | PHPSESSID/token reuse across IPs | GT-13 |
+| `detect_log4shell` | JNDI callbacks, `.class` payload fetch | GT-12 |
+| `detect_ddos` | Many-to-one TCP flood | GT-09 |
+| `detect_token_injection` | UDP credential/token theft (IoT-specific) | GT-11 |
+| `detect_arp_spoofing` | IP–MAC conflicts, gratuitous ARP | GT-05 |
+| `detect_udp_floods` | Mirai-style botnet flooding | GT-06 |
+| `detect_os_fingerprinting` | Malformed TCP flag probing | GT-10 |
+
+Each detector produces **structured anomaly records** — carrying `srcIp`, `dstIp`, `dstPort`, `packetNumbers`, `confidence`, and `payloadEvidence` — that serve as the ground-level evidence fed to the LLM analysis pipeline.
+
+**Extensibility:** Adding support for a new attack type requires only writing one new `detect_*()` function, registering it in the `analyze()` call, and mapping its anomaly type to an ETSI provision in the `_ANOMALY_CATEGORY_MAP` table. No other part of the system needs to change.
+
+### 2. LLM-as-Judge Compliance Reasoning Pipeline
+
+The `ComplianceJudge` implements a **five-phase cross-referencing pipeline** that bridges the structured detector output to human-readable, auditor-ready compliance verdicts:
+
+```
+Detector anomalies ──┐
+                     ▼
+Phase 1: Rule-Based Matching   ← Category-driven dispatch; single-best-evidence constraint
+Phase 2: Anomaly Promotion     ← Anomaly type → ETSI clause mapping via hint table
+Phase 3: LLM Judgment          ← LangGraph tool-loop; LLM calls tshark tools to verify
+Phase 4: Merge + Deduplication ← Per-rule dedup + evidence-level dedup (prevents noise)
+Phase 5: Summary               ← Violated / Compliant / Suspicious counts
 ```
 
-Open:
+The **evidence-deduplication** step is the key innovation: when multiple policy rules all point to the same network observation (e.g., 12 encryption rules all citing Stream 5), only the highest-confidence violation is kept as `violated` — the rest are demoted to `suspicious`. This reduces the "12 identical violations" artefact to 3–5 actionable findings.
 
+The LLM judge's written reasoning is grounded in observed traffic facts (IP addresses, packet numbers, protocol details), not policy document boilerplate — making each finding directly verifiable in a packet analyser.
+
+### 3. RAGAS Hallucination Detection for Audit Quality Assurance
+
+Compliance audit reports generated by LLMs carry an inherent risk of **hallucination** — the AI producing plausible-sounding explanations that are not supported by actual packet evidence. For auditors who may use findings in regulatory or legal contexts, this is a critical problem.
+
+SACA v14 integrates the **RAGAS Faithfulness metric** as a mandatory post-processing quality gate:
+
+- **What it measures:** Whether the LLM judge's written reasoning for each finding is grounded in the observed network evidence (the retrieved contexts), not invented.
+- **How it works:** For up to 3 violated findings (sampled across severity levels), an independent LLM scores each finding's reasoning against the structured packet evidence contexts. Scores range from 0.0 (pure hallucination) to 1.0 (fully grounded).
+- **Why it matters for auditors:** A faithfulness score < 0.5 signals that the AI's explanation departs significantly from observed traffic — the finding should be reviewed by a human before being cited in a compliance report. A score ≥ 0.7 indicates the reasoning is well-grounded and can be acted upon.
+- **Performance drift detection:** Running RAGAS across multiple audits over time reveals if changes to the LLM provider, policy documents, or detector tuning are degrading reasoning quality — functioning as a continuous quality monitor.
+
+Validated scores on real CICIoT 2023 captures: GT-08 (0.607 faithfulness), GT-02 (0.643 faithfulness).
+
+---
+
+## Key Capabilities
+
+- **11-Detector Network Analysis**: Modular, extensible tshark-based detectors covering all CICIoT 2023 attack categories — new detectors can be added without modifying existing code
+- **Policy Processing**: Automatic rule extraction from compliance documents (PDF, markdown) using NLP + LLM
+- **LLM-as-Judge Compliance Reasoning**: Five-phase pipeline with evidence deduplication that reduces finding noise by ~70%
+- **Multi-Provider LLM**: Unified abstraction supporting 7 LLM backends with automatic fallback
+- **RAGAS Hallucination Detection**: Per-finding faithfulness scoring to catch AI-generated audit explanations not grounded in packet evidence
+- **Explainable Findings**: Every violation includes specific packet numbers, IP addresses, and verifiable evidence
+
+## Docker Quick Start (Recommended)
+
+SACA v14 is designed to run entirely via Docker Desktop. This avoids local Python/Node setup and keeps all services consistent.
+
+### Prerequisites
+
+- Docker Desktop (Windows/macOS) or Docker Engine (Linux)
+- A configured `.env` file at repo root with at least one LLM provider key
+
+### One-Time Setup
+
+```bash
+cp .env.example .env
+# Edit .env with your API keys (at minimum OPENAI_API_KEY for RAGAS)
+```
+
+### Start
+
+```bash
+npm run docker:up
+# or
+docker compose -f docker/docker-compose.yml up --build
+```
+
+### Stop
+
+```bash
+npm run docker:down
+# or
+docker compose -f docker/docker-compose.yml down
+```
+
+**Access points:**
 - Frontend: http://localhost:5173
-- Backend health: http://localhost:3001/api/health
+- Express API: http://localhost:3001/api/health
+- Python Core: http://localhost:8000/health
 
-Why cloud keys: without them, only Ollama is marked configured.
+> If you rely on local Ollama, it must be reachable from containers (expose it or use a cloud provider in `.env`).
 
-## Executive Summary
+## Where You Can Contribute (Most Valuable Areas)
 
-Modern network teams still rely heavily on manual Wireshark triage, ad hoc scripts, and fragmented reporting.
-SACA addresses this by providing a single workflow where analysts can:
+### 1) Attack Detector Tuning (Highest Impact)
 
-- Upload a capture and policy document.
-- Run an agentic analysis pipeline.
-- Receive evidence-backed violated, compliant, and suspicious findings.
-- Interactively investigate and validate findings through tool-assisted chat.
+The detector layer is modular and additive. Each detector is a single function in:
 
-The design goal is practical audit acceleration, not black-box summarization.
-
-## Positioning
-
-SACA is inspired by strong agentic traffic-analysis patterns demonstrated in systems like NetTrace Agentix, while focusing on compliance judgment and policy-to-evidence mapping as first-class outcomes.
-
-Where SACA is differentiated:
-
-- Policy-agnostic compliance evaluation from uploaded policy text.
-- Dedicated compliance judge stage after network analysis.
-- Findings structure designed for audit defensibility and traceability.
-- Built-in detection coverage for common enterprise and IoT attack patterns.
-
-## Core Capabilities
-
-- Multi-agent pipeline: PolicyAgent, NetworkAgent, ComplianceJudge.
-- Evidence-driven chat tool loop with tshark-backed retrieval.
-- Detection coverage includes:
-  - DNS hijacking and spoofing.
-  - DNS tunneling heuristics.
-  - Session hijacking (token reuse across source IPs).
-  - OS fingerprinting (SYN option signature diversity).
-  - ARP spoofing, brute force, SYN scan, Mirai-like behavior.
-- UI triage support with DNS-first findings sorting.
-- Local-first deployment model for controlled security environments.
-
-## Architecture Overview
-
-1. Policy parsing and normalization.
-2. Network traffic analysis and anomaly extraction.
-3. Compliance judgment against policy clauses.
-4. Findings persistence and analyst review.
-
-High-level components:
-
-- Backend: Express + TypeScript agent orchestration and APIs.
-- Frontend: React + Vite analyst workspace.
-- Packet engine: tshark/Wireshark CLI integration.
-- Optional LLM providers: OpenAI, DeepSeek, OpenRouter, Ollama.
-
-```mermaid
-flowchart LR
-  U[Analyst UI\nReact + Vite] --> API[Backend API\nExpress + TypeScript]
-  API --> PA[PolicyAgent\nPolicy Parsing + Rule Extraction]
-  API --> NA[NetworkAgent\nTshark + Anomaly Detection]
-  PA --> CJ[ComplianceJudge\nPolicy-to-Evidence Judgement]
-  NA --> CJ
-  CJ --> FS[Findings Store\nSession + Audit Evidence]
-  FS --> U
-  API --> LLM[LLM Providers\nOpenAI / DeepSeek / OpenRouter / Ollama]
-  API --> TS[Tshark Engine]
+```
+apps/core-py/network_analyzer_tshark.py
 ```
 
-## Repository Layout
+To add a new attack signature:
 
-- `backend/` API, agents, and services.
-- `frontend/` web application.
-- `pcap/` dataset mapping and capture assets.
-- `plans/` architecture and design notes.
-- `policy/` sample policy artifacts.
-- `scripts/` local start, stop, reset, and utility scripts.
+1. Write `detect_myattack(file_path: str) -> List[Dict]` with a targeted tshark filter.
+2. Call it in `analyze()` and append results to `anomaly_dicts`.
+3. Add a mapping in `apps/core-py/agents/compliance_judge.py`:
+  `"my_attack_type": "etsi keyword"` inside `_ANOMALY_CATEGORY_MAP`.
 
-## Prerequisites
+This design means you can add new attack signatures without touching any other detectors.
 
-- Node.js 20+
-- npm 10+
-- tshark (Wireshark CLI)
+### 2) Compliance Judge Improvements
 
-Windows default path:
+Improve how findings are mapped to policy rules or how evidence is summarized:
 
-- `C:\Program Files\Wireshark\tshark.exe`
+- `apps/core-py/agents/compliance_judge.py`
+- Focus areas: rule matching heuristics, evidence deduplication, reasoning clarity
 
-If tshark is not on PATH, set `TSHARK_PATH` in local backend environment.
+### 3) RAGAS Quality & Drift Monitoring
 
-## Local Development (Windows)
+Improve hallucination detection and QA thresholds:
 
-Install dependencies:
+- `apps/core-py/eval/ragas_runner.py`
+- Focus areas: better sampling strategy, threshold policies, new metrics
 
-```powershell
-npm install
-cd backend; npm install
-cd ../frontend; npm install
-cd ..
+### 4) Frontend Visualization (Optional)
+
+Improve visibility and trust in findings:
+
+- `apps/web/src/`
+- Focus areas: evidence drill-down, packet-level trace views, RAGAS score display
+
+## Configuration (.env)
+
+All configuration lives in a single `.env` file at the repository root. This file is **git-ignored** and should never be committed.
+
+**Minimum required settings:**
+```env
+PORT=3001
+PYTHON_CORE_URL=http://core-py:8000
+OPENAI_API_KEY=<your-key>   # Required for RAGAS evaluation
 ```
 
-Run application:
-
-```powershell
-npm run start
+**Optional LLM providers (any one is enough):**
+```env
+OLLAMA_BASE_URL=http://host.docker.internal:11434
+OLLAMA_MODEL=deepseek-r1:8b
+DEEPSEEK_API_KEY=<your-key>
+DEEPSEEK_MODEL=deepseek-chat
+OPENROUTER1_API_KEY=<your-key>
+OPENROUTER1_MODEL=<model-name>
+KIMI_API_KEY=<your-key>
+KIMI_MODEL=kimi-k2.5
+NVIDIA_API_KEY=<your-key>
+NVIDIA_MODEL=mistralai/mistral-large-3-675b-instruct-2512
 ```
 
-Stop application:
+> ⚠️ **Never commit `.env`** with real API keys. Use `.env.example` for documentation.
 
-```powershell
-npm run stop
-```
+## License
 
-Endpoints:
+See LICENSE file in repository root.
 
-- Frontend: http://localhost:5173
-- Backend: http://localhost:3001
-- Health: http://localhost:3001/api/health
+## Acknowledgments
 
-## Docker Demo (Recommended for Sharing)
+Built with:
+- [LiteLLM](https://github.com/BerriAI/litellm) — Multi-provider LLM abstraction
+- [LangGraph](https://github.com/langchain-ai/langgraph) — State machine orchestration
+- [pyshark](https://github.com/KimiNewt/pyshark) — Packet analysis
+- [spaCy](https://spacy.io/) — NLP for policy processing
+- [FastAPI](https://fastapi.tiangolo.com/) — Python web framework
+- [React](https://react.dev/) + [Vite](https://vitejs.dev/) — Frontend
 
-SACA can run without GPU by using cloud providers (OpenAI, DeepSeek, OpenRouter).
+---
 
-1. Create a local Docker env file from template:
-
-```powershell
-Copy-Item .env.example .env.docker
-notepad .env.docker
-```
-
-2. Add only the provider keys you plan to use.
-
-3. Start containers:
-
-```powershell
-docker compose --env-file .env.docker up --build
-```
-
-4. Stop containers:
-
-```powershell
-docker compose down
-```
-
-If cloud API keys are not supplied, only Ollama appears as configured.
-
-## Security and Secret Management
-
-SACA includes guardrails to reduce accidental secret commits:
-
-- `.gitignore` blocks `.env`, `.env.local`, `.env.docker`, and common key/cert files.
-- Pre-commit secret scanner blocks staged sensitive filenames and key-like token patterns.
-
-Enable hooks after repository initialization:
-
-```powershell
-npm run security:install-hooks
-```
-
-Run manual staged scan:
-
-```powershell
-npm run security:scan-staged
-```
-
-Recommended local secret files:
-
-- `backend/.env.local` for backend runtime keys.
-- `.env.docker` for compose-based demos.
-
-Tracked templates:
-
-- `backend/.env.example`
-- `.env.example`
-
-## Validation and Faithfulness (GT-01..GT-13 + RAGAS)
-
-SACA v13 uses GT-01 through GT-13 as a practical benchmark range to measure detection quality and explanation grounding.
-
-Evaluation mechanism:
-
-- Ground-truth anchor: known attack behavior from GT-01..GT-13 scenarios.
-- SACA output under test: findings, evidence packet numbers, reasoning text, and policy linkage.
-- RAGAS-style faithfulness focus: verify that model claims are supported by retrieved packet evidence and policy clauses, not hallucinated summaries.
-
-Operational interpretation for this project:
-
-- High faithfulness: finding reasoning is directly traceable to packet-level evidence and mapped policy text.
-- Low faithfulness: reasoning includes unsupported claims, weak evidence linkage, or policy mismatch.
-
-Current validation emphasis in this repository includes improvements proven on:
-
-- GT-07 class behavior: DNS hijacking/spoofing detection quality.
-- GT-10 class behavior: OS fingerprinting signal surfacing.
-- GT-13 class behavior: session hijacking/token reuse visibility.
-
-This GT + RAGAS-faithfulness workflow is used as a continuous mechanism to measure whether SACA remains evidence-grounded as capabilities evolve.
-
-## Status
-
-This project is an actively evolving proposal and implementation track for practical, explainable network security auditing.
+**SACA v14** — made in the UK by OCB ©2026

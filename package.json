@@ -1,17 +1,25 @@
 {
   "name": "saca-monorepo",
-  "version": "0.1.0",
-  "description": "SACA v0.2 Multi-Agent Architecture",
+  "version": "0.2.0",
+  "description": "SACA v14 — Hybrid TypeScript + Python Multi-Agent Architecture",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "evals"
+  ],
   "scripts": {
-    "prestart:all": "node scripts/kill-ports.js",
-    "start:all": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\" --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,green\" --kill-others-on-fail",
-    "build:all": "cd backend && npm run build && cd ../frontend && npm run build",
+    "start": "node scripts/start.js",
+    "stop": "node scripts/stop.js",
+    "reset": "node scripts/stop.js && node scripts/start.js",
+    "docker:up": "docker compose -f docker/docker-compose.yml up --build",
+    "docker:down": "docker compose -f docker/docker-compose.yml down",
+    "start:core": "node scripts/start.js core",
+    "start:api": "node scripts/start.js api",
+    "start:web": "node scripts/start.js web",
+    "build:all": "cd apps/api-ts && npm run build && cd ../web && npm run build",
+    "kill-ports": "node scripts/stop.js",
     "security:scan-staged": "node scripts/secret-scan-staged.js",
-    "security:install-hooks": "node scripts/setup-git-hooks.js",
-    "start": ".\\scripts\\start.bat",
-    "stop": ".\\scripts\\stop.bat",
-    "reset": ".\\scripts\\reset.bat",
-    "restart": "npm run stop && npm run start"
+    "security:install-hooks": "node scripts/setup-git-hooks.js"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

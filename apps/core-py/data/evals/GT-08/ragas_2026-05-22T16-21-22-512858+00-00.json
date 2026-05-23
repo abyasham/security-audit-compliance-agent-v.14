@@ -1,0 +1,53 @@
+{
+  "session_id": "GT-08",
+  "timestamp": "2026-05-22T16:21:22.512858+00:00",
+  "avg_faithfulness": 0.607,
+  "avg_answer_relevancy": 0.602,
+  "provider_used": "openai",
+  "heuristic_fallback": false,
+  "error": null,
+  "per_finding_scores": [
+    {
+      "finding_id": "F-R001-fcf276",
+      "rule_name": "Prohibit Passwords for M2M Authentication",
+      "faithfulness": 0.55,
+      "answer_relevancy": 0.718
+    },
+    {
+      "finding_id": "F-R002-569b84",
+      "rule_name": "Brute-Force Attack Resistance",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.687
+    },
+    {
+      "finding_id": "F-R003-db35eb",
+      "rule_name": "Secure Update Cryptography",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.636
+    },
+    {
+      "finding_id": "F-R004-6bbe8e",
+      "rule_name": "Update Source Verification",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.587
+    },
+    {
+      "finding_id": "F-R005-4ac10c",
+      "rule_name": "Isolation of Non-Updateable Devices",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.716
+    },
+    {
+      "finding_id": "F-ANOM-aa0f25",
+      "rule_name": "Anomaly: syn_scan",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.474
+    },
+    {
+      "finding_id": "F-ANOM-a3032a",
+      "rule_name": "Anomaly: brute_force",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.394
+    }
+  ]
+}

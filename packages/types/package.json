@@ -1,0 +1,6 @@
+{
+  "name": "@saca/types",
+  "version": "0.1.0",
+  "main": "src/generated.ts",
+  "types": "src/generated.ts"
+}

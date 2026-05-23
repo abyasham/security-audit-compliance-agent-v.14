@@ -1,0 +1,27 @@
+{
+  "session_id": "36e50219-ff95-45bb-8468-a2c03c9c26b9",
+  "timestamp": "2026-05-23T09:59:22.939024+00:00",
+  "avg_faithfulness": 0.625,
+  "avg_answer_relevancy": 0.445,
+  "provider_used": "openai",
+  "heuristic_fallback": false,
+  "error": null,
+  "per_finding_scores": [
+    {
+      "finding_id": "F-H004-187152",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.667,
+      "faithfulness_reason": "LLM Faithfulness 50%: The judge's reasoning is partially grounded in the evidence \u2014 most claims are supported but some may be inferred. Evidence used: \"Plaintext HTTP: 192.168.137.59 \u2192 142.251.41.35:80...\" Judge reasoning: \"Matched rule 'ETSI \nETSI EN 303 645 V3' with confidence 0.95. Flow: 192.168.137.59 \u2192 142.251.41.35:80 (HTTP) stream 57....\"",
+      "relevancy_reason": "Reasoning provided (180 chars); Rule description available; Score 67%: Response partially addresses the rule 'Is this network traffic finding a violation of ETSI \nETSI EN 303 645 V3?' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-ANOM-4b4fd8",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.222,
+      "faithfulness_reason": "LLM Faithfulness 75%: The judge's reasoning is partially grounded in the evidence \u2014 most claims are supported but some may be inferred. Evidence used: \"570 connection attempts from 192.168.137.41 to 157.249.81.141:80. Many source po...\" Judge reasoning: \"Anomaly 'brute_force' detected with confidence 0.96. Flow: 192.168.137.41 \u2192 157.249.81.141:80 Evidence: 570 connection a...\"",
+      "relevancy_reason": "Reasoning provided (218 chars); Rule description available; Score 22%: Response has low relevance to the rule 'Is this network traffic finding a violation of ETSI \nETSI EN 303 645 V3?' \u2014 may be off-topic or too generic."
+    }
+  ]
+}

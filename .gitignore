@@ -6,6 +6,8 @@ frontend/node_modules/
 # Build output
 backend/dist/
 frontend/dist/
+apps/api-ts/dist/
+dist/
 
 # Runtime and temp data
 backend/data/
@@ -53,3 +55,4 @@ Thumbs.db
 nettraceagentix/
 docs/
 plans/
+.supplementary/

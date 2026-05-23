@@ -1,0 +1,31 @@
+# ─── SACA v14 Python Core ─────────────────────────────────────────────────
+# Web Framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+
+# LLM Gateway
+litellm>=1.57.0
+
+# Packet Analysis
+pyshark>=0.6.0
+scapy>=2.6.0
+
+# Policy NLP
+spacy>=3.8.0
+# Download: python -m spacy download en_core_web_sm
+
+# Knowledge Graph
+networkx>=3.4.0
+
+# LangGraph (ComplianceJudge state machine)
+langgraph>=0.2.0
+langchain-core>=0.3.0
+
+# RAGAS Evaluation
+ragas>=0.1.9
+
+# Utilities
+python-multipart>=0.0.18
+pydantic>=2.10.0
+httpx>=0.28.0
+python-dotenv>=1.0.0

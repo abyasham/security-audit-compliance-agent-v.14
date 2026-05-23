@@ -1,0 +1,355 @@
+{
+  "session_id": "e1b3c83f-dc1d-4edc-81d8-5f7110a4cd70",
+  "timestamp": "2026-05-22T20:43:13.320995+00:00",
+  "avg_faithfulness": 0.594,
+  "avg_answer_relevancy": 0.56,
+  "provider_used": "openai",
+  "heuristic_fallback": false,
+  "error": null,
+  "per_finding_scores": [
+    {
+      "finding_id": "F-H001-d26021",
+      "rule_name": "ETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.671,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (66 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H002-5f6ca1",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H003-c9546e",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H004-e7b034",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.402,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (314 chars); Rule description available; Score 40%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H005-e96266",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H006-31c551",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.813,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (302 chars); Rule description available; Score 81%: Response directly addresses the policy rule 'ETSI \nETSI EN 303 645 V3'."
+    },
+    {
+      "finding_id": "F-H007-acd47b",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.651,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 65%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H008-57b6ca",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H009-b28fc1",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.209,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (149 chars); Rule description available; Score 21%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H010-a379e6",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.209,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (149 chars); Rule description available; Score 21%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H011-188140",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.651,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 65%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H012-06080c",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.259,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 75%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (164 chars); Rule description available; Score 26%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H013-6f9df0",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.278,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (165 chars); Rule description available; Score 28%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H014-272ff0",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (88 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H015-d056c3",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (88 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H016-07f737",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.259,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (317 chars); Rule description available; Score 26%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H017-91e4ea",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (88 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H018-e6d293",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (88 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H019-e35638",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.689,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 75%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (317 chars); Rule description available; Score 69%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H020-103bfb",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.234,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (164 chars); Rule description available; Score 23%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H021-1588b9",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.224,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (164 chars); Rule description available; Score 22%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H022-fccf14",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.224,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (164 chars); Rule description available; Score 22%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H023-9984db",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (88 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H024-0938cd",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (88 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H025-e1022e",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (88 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H026-b5fd6f",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (89 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H027-6c311d",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.9,
+      "answer_relevancy": 0.205,
+      "faithfulness_reason": "Evidence details present (50 chars); No packet numbers referenced; Source and destination IPs identified; Destination port specified; Protocol: http; Score 90%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (165 chars); Rule description available; Score 20%: Response has low relevance to the rule 'ETSI \nETSI EN 303 645 V3' \u2014 may be off-topic or too generic."
+    },
+    {
+      "finding_id": "F-H028-468a17",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (86 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H029-32d010",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (86 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H030-2592a2",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.651,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 65%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H031-098db1",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.636,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 64%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H032-9b40ad",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H033-ce3286",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H034-e618c8",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H035-6fc33e",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H036-263a26",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H037-0fd015",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (88 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H038-356a6d",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (88 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H039-51b577",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.666,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 67%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H040-9b9840",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.651,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 65%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-H041-b2df04",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.45,
+      "answer_relevancy": 0.651,
+      "faithfulness_reason": "Evidence details present (20 chars); No packet numbers referenced; Score 45%: Moderate evidence \u2014 some packet support exists but could be stronger.",
+      "relevancy_reason": "Reasoning provided (72 chars); Rule description available; Score 65%: Response partially addresses the rule 'ETSI \nETSI EN 303 645 V3' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-ANOM-fdea5e",
+      "rule_name": "Anomaly: syn_scan",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.474,
+      "faithfulness_reason": "Evidence details present (68 chars); 20 packet number(s) referenced; Score 100%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (49 chars); Rule description available; Score 47%: Response partially addresses the rule 'Anomaly: syn_scan' \u2014 some relevant points may be missing."
+    },
+    {
+      "finding_id": "F-ANOM-96208e",
+      "rule_name": "Anomaly: brute_force",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.394,
+      "faithfulness_reason": "Evidence details present (70 chars); 20 packet number(s) referenced; Score 100%: Strong evidence grounding \u2014 finding is well-supported by packet data.",
+      "relevancy_reason": "Reasoning provided (52 chars); Rule description available; Score 39%: Response has low relevance to the rule 'Anomaly: brute_force' \u2014 may be off-topic or too generic."
+    }
+  ]
+}

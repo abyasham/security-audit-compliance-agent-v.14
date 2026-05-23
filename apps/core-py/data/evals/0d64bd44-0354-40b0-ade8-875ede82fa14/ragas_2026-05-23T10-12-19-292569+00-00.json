@@ -1,0 +1,19 @@
+{
+  "session_id": "0d64bd44-0354-40b0-ade8-875ede82fa14",
+  "timestamp": "2026-05-23T10:12:19.292569+00:00",
+  "avg_faithfulness": 0.667,
+  "avg_answer_relevancy": 0.889,
+  "provider_used": "openai",
+  "heuristic_fallback": false,
+  "error": null,
+  "per_finding_scores": [
+    {
+      "finding_id": "F-ANOM-d0589d",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.667,
+      "answer_relevancy": 0.889,
+      "faithfulness_reason": "LLM Faithfulness 67%: The judge's reasoning is partially grounded in the evidence \u2014 most claims are supported but some may be inferred. Evidence used: \"Token injection / credential theft detected in UDP payload (2 packet(s)). Authen...\" Judge reasoning: \"Anomaly 'token_injection' detected with confidence 0.88. Flow: 192.168.43.2 \u2192 192.168.43.255 Evidence: Token injection /...\"",
+      "relevancy_reason": "Reasoning provided (303 chars); Rule description available; Score 89%: Response directly addresses the policy rule 'Is this network traffic finding a violation of ETSI \nETSI EN 303 645 V3?'."
+    }
+  ]
+}

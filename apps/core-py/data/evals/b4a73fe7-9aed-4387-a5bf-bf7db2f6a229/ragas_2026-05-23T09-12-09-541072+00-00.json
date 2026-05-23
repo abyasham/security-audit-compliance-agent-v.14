@@ -1,0 +1,19 @@
+{
+  "session_id": "b4a73fe7-9aed-4387-a5bf-bf7db2f6a229",
+  "timestamp": "2026-05-23T09:12:09.541072+00:00",
+  "avg_faithfulness": 0.75,
+  "avg_answer_relevancy": 0.222,
+  "provider_used": "openai",
+  "heuristic_fallback": false,
+  "error": null,
+  "per_finding_scores": [
+    {
+      "finding_id": "F-ANOM-6d68f9",
+      "rule_name": "ETSI \nETSI EN 303 645 V3",
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.222,
+      "faithfulness_reason": "LLM Faithfulness 75%: The judge's reasoning is partially grounded in the evidence \u2014 most claims are supported but some may be inferred. Evidence used: \"893 connection attempts from 192.168.137.147 to 54.202.68.76:9999. Many source p...\" Judge reasoning: \"Anomaly 'brute_force' detected with confidence 0.96. Flow: 192.168.137.147 \u2192 54.202.68.76:9999 Evidence: 893 connection...\"",
+      "relevancy_reason": "Reasoning provided (220 chars); Rule description available; Score 22%: Response has low relevance to the rule 'Is this network traffic finding a violation of ETSI \nETSI EN 303 645 V3?' \u2014 may be off-topic or too generic."
+    }
+  ]
+}

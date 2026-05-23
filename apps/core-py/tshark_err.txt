@@ -1,0 +1,4 @@
+Analyzing C:/saca/saca14/apps/api-ts/uploads/3574306d-f816-4ddf-bd68-54b21aa4214b.pcap...
+  Packets: 3424
+  Conversations: 2381
+  SYN scans: 53, Brute force: 25
