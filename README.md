@@ -2,10 +2,13 @@
   <img src="media/saca.jpg" alt="SACA Logo" width="300">
 </p>
 
+<h3 align="center">Video Demo</h3>
 <p align="center">
   <a href="https://youtu.be/E_brJdQ0GjM">
     <img src="media/saca14_ss.png" alt="SACA v14 Demo" width="600">
   </a>
+  <br>
+  <a href="https://youtu.be/E_brJdQ0GjM">Watch the SACA v14 Demo on YouTube</a>
 </p>
 
 <p align="center">
