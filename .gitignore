@@ -51,7 +51,7 @@ credentials/
 # OS/editor
 .DS_Store
 Thumbs.db
-.vscode/*.log
+.vscode/
 *.mp4
 
 # Excluded project folders (not part of main SACA release)
