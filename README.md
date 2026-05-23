@@ -2,13 +2,12 @@
   <img src="media/saca.jpg" alt="SACA Logo" width="300">
 </p>
 
-<h3 align="center">Video Demo</h3>
 <p align="center">
   <a href="https://youtu.be/E_brJdQ0GjM">
     <img src="media/saca14_ss.png" alt="SACA v14 Demo" width="600">
   </a>
   <br>
-  <a href="https://youtu.be/E_brJdQ0GjM">Watch the SACA v14 Demo on YouTube</a>
+  <a href="https://youtu.be/E_brJdQ0GjM"><b>Watch the SACA v14 Video Demo</b></a>
 </p>
 
 <p align="center">
@@ -94,9 +93,6 @@ Validated scores on real CICIoT 2023 captures: GT-08 (0.607 faithfulness), GT-02
 ## Docker Quick Start (Recommended)
 
 SACA v14 is designed to run entirely via Docker Desktop. This avoids local Python/Node setup and keeps all services consistent.
-
-### Demo
-[![SACA v14 Demo](media/saca14_ss.png)](https://youtu.be/E_brJdQ0GjM)
 
 ### Prerequisites
 
