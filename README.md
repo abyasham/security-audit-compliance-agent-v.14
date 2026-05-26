@@ -18,6 +18,39 @@
   <img src="https://img.shields.io/badge/docker-compose-2496ED" alt="Docker">
 </p>
 
+<p align="center">
+  🔍 Hello Cybersecurity colleagues! We are conducting research at Cardiff University to test <strong>LLM + RAG</strong> accuracy in explaining network security violations. We invite you to contribute your expertise to this study.
+</p>
+
+<p><strong>Why join?</strong></p>
+<ul>
+  <li>As an expert, your judgement helps to reshape the human-in-the-loop of our AI system.</li>
+  <li>Help bridge the gap between AI audit tools and real-world practice.</li>
+</ul>
+
+<p><strong>How to help:</strong></p>
+<p>
+  It's simple! Complete this form: <a href="https://obrina.page">https://obrina.page</a>.
+  You can skip the FGD session (choose any available date) and just watch the
+  <a href="https://youtu.be/rGiHmws6qfw">video</a> instead.
+  After submitting stage 1, you can directly go to
+  <a href="https://obrina.page/2">stage 2</a> and finish the questionnaire.
+</p>
+
+<p><strong>Ethics & Privacy:</strong></p>
+<ul>
+  <li><strong>Anonymous:</strong> Your identity remains confidential; your email is used only for correspondence.</li>
+  <li><strong>Approved:</strong> This research is cleared by the Cardiff University Ethics Committee (Ref: COMSC/Ethics/2026/006).</li>
+</ul>
+
+<p align="center">
+  Ready to advance cybersecurity and IT audit? Fill out the form now! 🚀
+</p>
+
+<p align="center">
+  #ITAudit #InfoSec #CyberSecurityIndonesia #AIinAudit #CardiffUniversity
+</p>
+
 **SACA** (Security Audit Compliance Agent) is a research prototype for automated, explainable IoT network compliance auditing. It combines a **ground-truth-calibrated attack detector layer**, an **LLM-as-Judge compliance reasoning engine**, and a **RAGAS-based hallucination detection evaluator** to produce defensible security findings from network packet captures (pcap) against standards such as ETSI EN 303 645.
 
 **v14** introduces a hybrid TypeScript + Python architecture with unified multi-provider LLM support.
@@ -211,5 +244,6 @@ Built with:
 - [React](https://react.dev/) + [Vite](https://vitejs.dev/) — Frontend
 
 ---
-
-**SACA v14** — made in the UK by OCB ©2026
+<p align="center">
+  <strong>SACA v14</strong> — made in the UK by OCB ©2026
+</p>
