@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-  <a href="https://youtu.be/E_brJdQ0GjM">
-    <img src="media/saca14_ss.png" alt="SACA v14 Demo" width="600">
+  <a href="https://youtu.be/rGiHmws6qfw">
+    <img src="media/sacayt.png" alt="SACA v14 Demo" width="600">
   </a>
   <br>
-  <a href="https://youtu.be/E_brJdQ0GjM"><b>Watch the SACA v14 Video Demo</b></a>
+  <a href="https://youtu.be/rGiHmws6qfw"><b>Watch the SACA v14 Video Demo</b></a>
 </p>
 
 <p align="center">
